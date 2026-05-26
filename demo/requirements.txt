@@ -1,6 +1,6 @@
-faiss-cpu==1.7.4
+faiss-cpu==1.13.2
 gradio==4.44.1
 numpy<2
-pandas==2.0.3
-sentence-transformers==2.7.0
+pandas==2.2.3
+sentence-transformers==3.4.1
 sentencepiece==0.2.0

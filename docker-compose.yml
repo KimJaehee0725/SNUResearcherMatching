@@ -36,6 +36,10 @@ services:
       NVIDIA_DRIVER_CAPABILITIES: ${NVIDIA_DRIVER_CAPABILITIES:-compute,utility}
     ports:
       - "${DEMO_PORT:-7860}:7860"
+    ipc: host
+    ulimits:
+      memlock: -1
+      stack: 67108864
     volumes:
       - .:/workspace/codes:ro
       - ./data:/workspace/data:ro

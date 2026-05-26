@@ -31,6 +31,8 @@ cd SNUResearcherMatching
 
 데모는 기본적으로 `http://localhost:7860`에서 실행됩니다. 포트나 GPU를 바꾸려면 아래처럼 환경변수를 지정합니다.
 
+Docker 이미지는 DGX Spark/Grace Blackwell 환경에 맞춰 `nvcr.io/nvidia/pytorch:24.08-py3`를 기반으로 빌드합니다. 서버에서 NGC 인증이 필요하면 먼저 `docker login nvcr.io`를 수행합니다.
+
 ```bash
 DEMO_PORT=7861 CUDA_VISIBLE_DEVICES=1 DEMO_DEVICE=cuda:0 ./demo/run_docker_compose.sh
 ```
