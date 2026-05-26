@@ -293,4 +293,14 @@ if __name__ == "__main__":
     )
     large_k_full = len(full_corpus)
     large_k_subset = len(subset_corpus)
-    demo.launch(server_name=args.server_name, server_port=args.server_port, share=args.share)
+    demo.launch(
+        server_name=args.server_name,
+        server_port=args.server_port,
+        share=args.share,
+        prevent_thread_lock=True,
+        show_error=True,
+    )
+
+    import time
+    while True:
+        time.sleep(3600)

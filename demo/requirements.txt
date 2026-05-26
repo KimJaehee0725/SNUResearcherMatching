@@ -1,7 +1,10 @@
+fastapi==0.115.11
 faiss-cpu==1.13.2
 gradio==4.44.1
+jinja2==3.1.6
 numpy<2
 pandas==2.2.3
 sentence-transformers==3.4.1
 sentencepiece==0.2.0
+starlette==0.46.1
 transformers==4.49.0
