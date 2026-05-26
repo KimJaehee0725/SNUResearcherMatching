@@ -1,0 +1,12 @@
+device: "cuda:0"
+train_file: "{repository_path}/SNU_Engineering_Search/data/project_train_randsamp_v2.jsonl"
+model_name: "BAAI/bge-m3"
+run_name: "project_BGE-M3"
+micro_batch_size : 4
+batch_size: 128         
+scale: 1        
+epochs: 20
+save_frequency: 2
+learning_rate: 5e-5
+warmup_ratio: 0.1
+top_k: 5

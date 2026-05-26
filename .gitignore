@@ -1,0 +1,33 @@
+# Local Python/runtime noise
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Large local artifacts
+/data/
+/trained_model/
+/train/data/files/
+
+# Model/checkpoint/vector-index artifacts
+*.bin
+*.ckpt
+*.faiss
+*.h5
+*.joblib
+*.onnx
+*.pkl
+*.pt
+*.safetensors
+*.tar
+*.tar.gz
+*.zip
+
+# Logs and experiment outputs
+logs/
+outputs/
+runs/
+wandb/

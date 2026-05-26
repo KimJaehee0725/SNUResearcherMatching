@@ -1,0 +1,13 @@
+device: "cuda:0"
+train_file: "{repository_path}/SNU_Engineering_Search/data/project_train_randsamp_v2.jsonl"
+model_name: "google-bert/bert-base-uncased"
+run_name: "debug"
+micro_batch_size : 64
+batch_size: 1024        
+scale: 1    
+epochs: 20
+save_frequency: 2
+learning_rate: 5e-5
+warmup_ratio: 0.1
+top_k: 5
+mode: both
