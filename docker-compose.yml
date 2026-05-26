@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        PYTORCH_IMAGE: ${PYTORCH_IMAGE:-nvcr.io/nvidia/pytorch:25.10-py3}
     image: snu-researcher-matching-demo:latest
     working_dir: /workspace/codes/demo
     command:
