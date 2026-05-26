@@ -17,10 +17,10 @@ RUN ln -sf /usr/bin/pip3 /usr/bin/pip
 
 WORKDIR /workspace
 
-COPY requirements.txt /workspace/codes/requirements.txt
+COPY demo/requirements.txt /workspace/codes/demo/requirements.txt
 
-# Upgrade pip and install dependencies with the right CUDA wheels
+# Upgrade pip and install only demo runtime dependencies.
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel
-RUN pip install --no-cache-dir -r /workspace/codes/requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118
+RUN pip install --no-cache-dir -r /workspace/codes/demo/requirements.txt
 
 CMD ["/bin/bash"]
