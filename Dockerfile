@@ -23,5 +23,6 @@ COPY demo/requirements.txt /workspace/codes/demo/requirements.txt
 # Upgrade pip and install only demo runtime dependencies.
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir -r /workspace/codes/demo/requirements.txt
+RUN python -c "import faiss, gradio, pandas; from sentence_transformers import SentenceTransformer"
 
 CMD ["/bin/bash"]
