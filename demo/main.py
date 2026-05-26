@@ -263,6 +263,11 @@ with gr.Blocks() as demo:
 
 if __name__ == "__main__":
     import argparse
+    import os
+
+    def str_to_bool(value):
+        return str(value).lower() in {"1", "true", "yes", "y"}
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_path", type=str, default="/workspace/trained_model/checkpoint-2060")
     parser.add_argument("--research_corpus_path", type=str, default="/workspace/data/translation_data/research_translation_final.csv")
@@ -271,6 +276,9 @@ if __name__ == "__main__":
     parser.add_argument("--project_new_prof_path", type=str, default="/workspace/data/new_researchers/project_new_prof_10.txt")
     parser.add_argument("--index_path", type=str, default="/workspace/data/demo/ver1")
     parser.add_argument("--device", type=str, default="cuda:0")
+    parser.add_argument("--server_name", type=str, default=os.environ.get("GRADIO_SERVER_NAME"))
+    parser.add_argument("--server_port", type=int, default=int(os.environ.get("GRADIO_SERVER_PORT", "7860")))
+    parser.add_argument("--share", type=str_to_bool, default=str_to_bool(os.environ.get("GRADIO_SHARE", "true")))
 
     args = parser.parse_args()
 
@@ -285,4 +293,4 @@ if __name__ == "__main__":
     )
     large_k_full = len(full_corpus)
     large_k_subset = len(subset_corpus)
-    demo.launch(share=True)
+    demo.launch(server_name=args.server_name, server_port=args.server_port, share=args.share)

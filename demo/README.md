@@ -17,6 +17,24 @@
 
 ## 실행 방법
 
+### Docker Compose로 실행
+
+레포를 clone한 뒤 프로젝트 루트에서 아래 순서로 실행합니다.
+
+```bash
+git clone https://github.com/KimJaehee0725/SNUResearcherMatching.git
+cd SNUResearcherMatching
+
+./demo/download_artifacts.sh
+./demo/run_docker_compose.sh
+```
+
+데모는 기본적으로 `http://localhost:7860`에서 실행됩니다. 포트나 GPU를 바꾸려면 아래처럼 환경변수를 지정합니다.
+
+```bash
+DEMO_PORT=7861 CUDA_VISIBLE_DEVICES=1 DEMO_DEVICE=cuda:0 ./demo/run_docker_compose.sh
+```
+
 ### 1. 필요 파일 준비
 
 데모를 실행하기 위해서는 사전에 학습된 언어 모델과 검색 대상이 될 데이터(Corpus), 그리고 생성된 인덱스 파일이 필요합니다. `run.sh` 스크립트에 기본 경로가 지정되어 있으며, 필요에 따라 경로를 수정해야 합니다.
